@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>videojs-danmaku-player</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Custom Fonts -->
+  <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/video.js/dist/video-js/video-js.css">
+
+  <!-- Vendor Scripts -->
+  <script type="text/javascript" src="../bower_components/comment-core-library/build/CommentCoreLibrary.js"></script>
+  <script type="text/javascript" src="../bower_components/video.js/dist/video-js/video.dev.js"></script>
+  <script type="text/javascript" src="../bower_components/videojs-youtube/src/youtube.js"></script>
+
+  <!-- Custom Scripts -->
+  <link rel="stylesheet" type="text/css" href="css/simple.css">
+  <script type="text/javascript" src="js/ABPLibxml.js"></script>
+  <script type="text/javascript" src="js/player.js"></script>
+
+  <script type="text/javascript">
+    /** Set Up Video.js Player **/
+    window.addEventListener("load", function() {
+      var vjs = videojs("video1");
+      (new PlayerContext().getPlayer(vjs, vjs.currentSrc())).vjs;
+
+    });
+  </script>
+</head>
+
+<body>
+  <div>
+    <video id="video1" class="video-js vjs-default-skin" controls preload="auto" width="854" height="480" data-setup='{"example_option":true, "techOrder": ["youtube", "html5"]}'>
+      <source src="http://www.youtube.com/watch?v=kHYMO9Q-nOY" type="video/youtube">
+        <track src="comment.xml">
+  </div>
+</body>
+
+</html>
